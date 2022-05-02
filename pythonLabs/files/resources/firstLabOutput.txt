@@ -1,0 +1,11 @@
+Cats are the best.- 19
+Hi, my name is Volodymyr.- 26
+At least I have some time to sleep.- 36
+I also do need to work 40 hours a week.- 40
+When would I have time to write my game.- 41
+I hope we are allowed to use collections.- 42
+It is said that good work always pays back.- 44
+I was really in a hurry preparing for Exams.- 45
+Did you know that I have language courses 4 hours per week?- 60
+This is definitely good work with basic java files libraries.- 62
+Java is very cool, it is a pity that we can't do all labs on it.- 65
