@@ -1,7 +1,10 @@
 package files.entity;
 
-public class Patient {
+import java.io.Serializable;
 
+public class Patient implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String name;
     private String lastVisitDate;
     private String nextVisitTime;

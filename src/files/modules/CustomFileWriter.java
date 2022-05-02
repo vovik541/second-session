@@ -44,4 +44,15 @@ public class CustomFileWriter {
             ex.printStackTrace();
         }
     }
+
+    public static void createSerialisedObjectsBinaryFile(List<Patient> patients, String path) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream((path));
+             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+            for (Patient patient : patients) {
+                objectOutputStream.writeObject(patient);
+            }
+        } catch (Exception e) {
+            System.out.println("File not found");
+        }
+    }
 }

@@ -6,46 +6,49 @@ import java.util.List;
 
 import static files.modules.ConsoleWriter.print;
 import static files.modules.ConsoleWriter.printPatients;
-import static files.modules.CustomFileReader.readPatientsFromFile;
-import static files.modules.CustomFileWriter.createBinaryFile;
+import static files.modules.CustomFileReader.readFromSerialisedPatientsBinaryFile;
+import static files.modules.CustomFileWriter.createSerialisedObjectsBinaryFile;
 import static files.modules.FilePathManager.getFilePath;
 import static files.modules.PatientsManager.*;
 
 public class FilesSecondLab {
 
     public static void main(String[] args) {
-        String patientInputFilePath = getFilePath("patientsGenSecLab.txt");
+        String patientInputFilePath = getFilePath("patientsGenSecLab.dat");
         List<Patient> patients = generatePatients();
 
-        createBinaryFile(patients, patientInputFilePath);
+        //create input file
+        createSerialisedObjectsBinaryFile(patients, patientInputFilePath);
         print("File with patients created:", patientInputFilePath);
         printPatients(patients);
 
-        patients = readPatientsFromFile(patientInputFilePath);
-        print("Read from patientsGenSecLab.txt file:");
+        //read from input file
+        patients = readFromSerialisedPatientsBinaryFile(patientInputFilePath);
+        print("Read from patientsGenSecLab.dat file:");
         printPatients(patients);
 
+        //delete overdue from input file
         patients = deleteOverduePathients(patients);
         print("All overdue patients were deleted:");
         printPatients(patients);
-
-        createBinaryFile(patients, patientInputFilePath);
+        createSerialisedObjectsBinaryFile(patients, patientInputFilePath);
         print("File was recreated:", patientInputFilePath);
 
-        String secondaryPatientsFilePath = getFilePath("secondaryPatients.txt");
+        //create secondary patients file
+        String secondaryPatientsFilePath = getFilePath("secondaryPatients.dat");
         List<Patient> secondaryPatients = getSecondaryPatients(patients);
         print("All secondary patients:");
-        printPatients(patients);
-
-        createBinaryFile(secondaryPatients, secondaryPatientsFilePath);
+        printPatients(secondaryPatients);
+        createSerialisedObjectsBinaryFile(secondaryPatients, secondaryPatientsFilePath);
         print("File with secondary patients created:", patientInputFilePath);
 
-        String otherPatientsFilePath = getFilePath("secondaryPatients.txt");
+        //create other patients file
+        String otherPatientsFilePath = getFilePath("otherPatients.dat");
         List<Patient> otherPatients = getOtherPatients(patients, secondaryPatients);
         print("All other patients:");
         printPatients(otherPatients);
 
-        createBinaryFile(otherPatients, otherPatientsFilePath);
+        createSerialisedObjectsBinaryFile(otherPatients, otherPatientsFilePath);
         print("File with other patients created:", otherPatientsFilePath);
     }
 }

@@ -50,4 +50,18 @@ public class CustomFileReader {
 
         return patients;
     }
+    public static List<Patient> readFromSerialisedPatientsBinaryFile(String path) {
+        List<Patient> patients = new LinkedList<>();
+        try (FileInputStream fileInputStream = new FileInputStream((path));
+             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
+            while (true){
+                patients.add((Patient) objectInputStream.readObject());
+            }
+        } catch (EOFException e){
+            //end of file reached
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return patients;
+    }
 }
