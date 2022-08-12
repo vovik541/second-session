@@ -17,7 +17,6 @@ public:             // Access specifier
         this->endCoordinateY = y;
     }
 
-
     double countLength() {  // Method/function defined inside the class
         return sqrt(pow(this->endCoordinateX - 0, 2) + pow(this->endCoordinateX - 0, 2));
     }

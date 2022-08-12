@@ -6,7 +6,7 @@ import static classes.and.objects.modules.ConsoleWriter.print;
 
 public class InputReader {
 
-    public static int readNumber(String message) {
+    public int readNumber(String message) {
         Scanner scanner = new Scanner(System.in);
         print(message);
 

@@ -1,5 +1,8 @@
 package classes.and.objects.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Function {
     private final int a;
     private final int b;
@@ -14,7 +17,17 @@ public class Function {
     public boolean isPartOfFunction(int x, int y) {
         return (a * x + b * y + c) == 0;
     }
+    public List<Integer> getSuitableFunctionsIndexes(int x, int y, Function[] functions) {
+        List<Integer> indexes = new ArrayList<>();
 
+        for (int i = 0; i < functions.length; i++) {
+            if (functions[i].isPartOfFunction(x, y)) {
+                indexes.add(i);
+            }
+        }
+
+        return indexes;
+    }
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

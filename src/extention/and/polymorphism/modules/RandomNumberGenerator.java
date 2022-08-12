@@ -6,7 +6,7 @@ public class RandomNumberGenerator {
 
     public static int generateRandomInt() {
         Random random = new Random();
-        return random.nextInt() % 10000;
+        return random.nextInt() % 101;
     }
 
     public static float generateRandomReal() {

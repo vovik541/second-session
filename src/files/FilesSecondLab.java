@@ -24,15 +24,12 @@ public class FilesSecondLab {
 
         //read from input file
         patients = readFromSerialisedPatientsBinaryFile(patientInputFilePath);
-        print("Read from patientsGenSecLab.dat file:");
-        printPatients(patients);
-
         //delete overdue from input file
         patients = deleteOverduePathients(patients);
         print("All overdue patients were deleted:");
-        printPatients(patients);
         createSerialisedObjectsBinaryFile(patients, patientInputFilePath);
         print("File was recreated:", patientInputFilePath);
+        printPatients(patients);
 
         //create secondary patients file
         String secondaryPatientsFilePath = getFilePath("secondaryPatients.dat");

@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class IPz11_Hymych_2 {
-    private static HashMap<Integer, Integer> sortedIndexes;
+    private static HashMap<Integer, Integer> indexesMap;
 
     public static void main(String[] args) {
-        String inputFilePath = readInputFileFullPath();
+        String inputFilePath = "D:\\projects\\second-session\\src\\algorithms\\second\\input.txt";
         int x = readCustomer();
         Map<Integer, ArrayList<Integer>> input = readFromFile(inputFilePath);
-        sortedIndexes = arrToMap(input.get(x));
+        indexesMap = arrToMap(input.get(x));
         HashMap<Integer, Integer> result = lookForInversions(x, input);
         LinkedHashMap<Integer, Integer> sorted = sortByValue(result.entrySet());
         createFile(sorted, x);
@@ -42,7 +42,7 @@ public class IPz11_Hymych_2 {
         }
         int numOfInversions = 0;
         for (int i = deep; i < toCompare.size() - 1; i++) {
-            if (toCompare.get(sortedIndexes.get(deep)) > toCompare.get(sortedIndexes.get(i + 1))) {
+            if (toCompare.get(indexesMap.get(deep)) > toCompare.get(indexesMap.get(i + 1))) {
                 numOfInversions++;
             }
         }

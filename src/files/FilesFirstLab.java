@@ -28,7 +28,7 @@ public class FilesFirstLab {
         print(lines);
 
         String outputFilePath = getFilePath("outputFileFirstLab.txt");
-        print("Output file path is:", inputFilePath);
+        print("Output file path is:", outputFilePath);
 
         createFile(lines, outputFilePath);
         print("Output file created.");

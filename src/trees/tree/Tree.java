@@ -30,7 +30,7 @@ public class Tree {
             if (node.left != null) {
                 insert(node.left, value);
             } else {
-                print("Inserted " + value + " to LEFT of " + node.value);
+//                print("Inserted " + value + " to LEFT of " + node.value);
                 System.out.println();
                 node.left = new Node(value);
             }
@@ -38,7 +38,7 @@ public class Tree {
             if (node.right != null) {
                 insert(node.right, value);
             } else {
-                print("Inserted " + value + " to RIGHT of " + node.value);
+//                print("Inserted " + value + " to RIGHT of " + node.value);
                 node.right = new Node(value);
             }
         }
@@ -95,5 +95,94 @@ public class Tree {
 
         return elementsNum;
     }
+    public void printTree(){
+
+        System.out.print("                        ");
+        System.out.println(rootNode.value);
+
+        for (int i = 0; i < getHeight(); i++){
+            printByLevel(rootNode, i, 0);
+            System.out.println();
+        }
+        StringBuilder builder = new StringBuilder();
+    }
+    private void printByLevel(Node root,int level, int deep){
+
+        if (deep == level) {
+            for (int j = 0; j < 32 / (Math.pow(2, deep+1)); j++){
+                System.out.print(" ");
+            }
+            if (nonNull(root.left)){
+                System.out.print(root.left.value);
+            }
+            for (int j = 0; j < 32 / (Math.pow(2, deep+1)); j++){
+                System.out.print(" ");
+            }
+            if (nonNull(root.right)){
+                System.out.print(root.right.value);
+            }
+        }
+
+        if (nonNull(root.left)) {
+            printByLevel(root.left, level, deep + 1);
+        }
+
+        if (nonNull(root.right)) {
+            printByLevel(root.right, level, deep + 1);
+        }
+
+    }
+//    private void printByLevel(Node root,int level, int deep){
+//
+//
+//        if (deep == level) {
+//            if (nonNull(root.left) && nonNull(root.right)) {
+//                for (int j = level; j < getHeight(); j++){
+//                    System.out.print(" ");
+//                }
+//                System.out.print(root.left.value);
+//                for (int j = level; j < getHeight(); j++){
+//                    System.out.print(" ");
+//                }
+//                if (root.right.value ==22){
+//                    System.out.print("    " + root.right.value + "");
+//                }else {
+//                    System.out.print(root.right.value + "");
+//
+//                }
+//            }
+//            if (isNull(root.left) && nonNull(root.right)) {
+//                for (int j = level; j < getHeight(); j++){
+//                    System.out.print(" ");
+//                }
+//
+//                for (int j = level; j < getHeight(); j++){
+//                    System.out.print(" ");
+//                }
+//                System.out.print(root.right.value + " ");
+//            }
+//            if (nonNull(root.left) && isNull(root.right)) {
+//                for (int j = level; j < getHeight(); j++){
+//                    System.out.print(" ");
+//                }
+//
+//                for (int j = level; j < getHeight(); j++){
+//                    System.out.print(" ");
+//                }
+//                System.out.print(root.left.value + "");
+//            }
+//            return;
+//        }
+//
+//        if (nonNull(root.left)) {
+//            printByLevel(root.left, level, deep + 1);
+//        }
+//
+//        if (nonNull(root.right)) {
+//            printByLevel(root.right, level, deep + 1);
+//        }
+//
+//    }
+
 
 }

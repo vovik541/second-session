@@ -14,6 +14,8 @@ public class TreesLab {
         print("Building tree with root value " + rootValue);
         Tree tree = buildTree(rootValue);
 
+        tree.printTree();
+
         int height = tree.getHeight();
         print("Tree's height is: " + height);
 

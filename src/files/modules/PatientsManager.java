@@ -17,12 +17,16 @@ public class PatientsManager {
             this.add(new Patient("Alex", "2022-04-28", "17:30"));
             this.add(new Patient("Camilo", "2022-04-20", "11:15"));
             this.add(new Patient("Fred", "2022-04-10", "18:45"));
+            this.add(new Patient("Fred", "2022-05-09", "18:45"));
+            this.add(new Patient("Fred", "2022-05-07", "18:45"));
             this.add(new Patient("Oleg", "2022-03-26", "09:20"));
             this.add(new Patient("Olga", "2022-04-11", "08:45"));
             this.add(new Patient("Nata", "2022-04-26", "10:00"));
             this.add(new Patient("Wendy", "2022-04-26", "07:45"));
             this.add(new Patient("Frank", "1999-02-02", "09:40"));
-            this.add(new Patient("Carl", "1999-02-02", "22:40"));
+            this.add(new Patient("Carl", "1999-05-02", "22:40"));
+            this.add(new Patient("Carl", "1999-02-02", "08:40"));
+            this.add(new Patient("Carl", "1999-02-02", "07:40"));
 //            this.add("Vova,2022-04-26,10:00");
 //            this.add("Dima,2022-04-27,14:45");
 //            this.add("Alex,2022-04-28,14:30");

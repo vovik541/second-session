@@ -24,7 +24,7 @@ public class ConsoleWriter {
         }
 
         for (Integer index : indexes) {
-            System.out.println("Index " + index + " function: " + functions[index].toString());
+            System.out.println(index + 1 +". function: " + functions[index].toString());
         }
     }
 }
